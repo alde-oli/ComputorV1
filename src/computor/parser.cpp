@@ -126,13 +126,13 @@ static double	computePower(const std::string& power_group) {
 			number += power_group[i];
 		else if (power_group[i] == '^') {
 			if (!number.empty()) {
-				numbers.push_back(stod(number));
+				numbers.push_back(std::atof(number.c_str()));
 				number.clear();
 			}
 		}
 	}
 	if (!number.empty())
-		numbers.push_back(stod(number));
+		numbers.push_back(std::atof(number.c_str()));
 
 	double				result = numbers.back();
 	for (int i = numbers.size() - 2; i >= 0; --i)
@@ -151,7 +151,7 @@ static std::vector<std::string>	splitTerm(const std::string& term) {
 		char c = term[i];
 
 		if (isdigit(c)) {
-			if (!in_exponent && !current_part.empty() && !isdigit(current_part.back()) && current_part.back() != '^') {
+			if (!in_exponent && !current_part.empty() && !isdigit(current_part[current_part.length() - 1]) && current_part[current_part.length() - 1] != '^') {
 				parts.push_back(current_part);
 				current_part.clear();
 			}

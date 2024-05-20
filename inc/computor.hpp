@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <stdlib.h>
 #include <iomanip>
 #include <string>
 #include <map>
@@ -8,8 +9,9 @@
 #include "Complex.hpp"
 
 
-#define NROOT_TOLERANCE 1e-6
-#define TRIGO_RECURSION 200
+#define PI 3.14159265358979323846
+#define NROOT_TOLERANCE 1e-10
+#define TRIGO_RECURSION 10
 
 
 void	computor(std::string input);
@@ -29,5 +31,7 @@ double	mynRoot(double x, int n);
 int		myFactorial(unsigned int x);
 double	myCos(double x);
 double	mySin(double x);
+double	myArcCos(double x);
+double	myArcSin(double x);
 
 void	errorExit(std::string msg);

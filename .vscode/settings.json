@@ -77,6 +77,8 @@
 		"sstream": "cpp",
 		"string_view": "cpp",
 		"unordered_map": "cpp",
-		"iomanip": "cpp"
+		"iomanip": "cpp",
+		"xlocmon": "cpp",
+		"xloctime": "cpp"
 	}
 }

@@ -29,6 +29,13 @@ Complex	&Complex::operator=(const Complex &other) {
 	return *this;
 }
 
+Complex	&Complex::operator=(double x) {
+	_real = x;
+	_imaginary = 0;
+
+	return *this;
+}
+
 
 Complex	Complex::operator+(const Complex &other) {
 	return Complex(_real + other.getReal(), _imaginary + other.getImaginary());
@@ -73,6 +80,17 @@ Complex Complex::operator/(const Complex &other) {
 
 Complex Complex::operator/(const double x) {
 	return Complex(_real / x, _imaginary / x);
+}
+
+std::ostream& operator<<(std::ostream& os, const Complex& complex) {
+	if (complex._imaginary) {
+		if (complex._imaginary < 0)
+			os << complex._real << " - " << complex._imaginary * -1 << "i";
+		else
+			os << complex._real << " + " << complex._imaginary << "i";
+	} else
+		os << complex._real;
+    return os;
 }
 
 ///////////////////////////
