@@ -11,7 +11,7 @@
 
 #define PI 3.14159265358979323846
 #define NROOT_TOLERANCE 1e-10
-#define TRIGO_RECURSION 10
+#define TRIGO_RECURSION 200
 
 
 void	computor(std::string input);
@@ -24,7 +24,6 @@ void	solver0(std::map<size_t, double> &polynom);
 void	solver1(std::map<size_t, double> &polynom);
 void	solver2(std::map<size_t, double> &polynom);
 void	solver3(std::map<size_t, double> &polynom);
-void	solver4(std::map<size_t, double> &polynom);
 
 double	myPow(double x, int exp);
 double	mynRoot(double x, int n);

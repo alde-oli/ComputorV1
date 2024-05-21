@@ -7,7 +7,7 @@ void	computor(std::string input) {
 
 		unsigned int				deg = 0;
 
-		void						(*solvers[5])(std::map<size_t, double> &) = {solver0, solver1, solver2, solver3, solver4};
+		void						(*solvers[4])(std::map<size_t, double> &) = {solver0, solver1, solver2, solver3};
 
 
 		parseEquation(input, left_polynom, right_polynom);
@@ -41,7 +41,7 @@ void	computor(std::string input) {
 
 		std::cout << "polynomial degree: " << deg << std::endl;
 
-		if (deg <= 4)
+		if (deg <= 3)
 			solvers[deg](left_polynom);
 		else
 			std::cout << "cannot resolve equations over 4th degree" << std::endl;

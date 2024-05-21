@@ -13,17 +13,17 @@ class Complex {
 		Complex					&operator=(const Complex &other);
 		Complex					&operator=(double x);
 
-		Complex					operator+(const Complex &other);
-		Complex					operator+(const double x);
+		Complex					operator+(const Complex &other) const;
+		Complex					operator+(const double x) const;
 
-		Complex					operator-(const Complex &other);
-		Complex 				operator-(const double x);
+		Complex					operator-(const Complex &other) const;
+		Complex 				operator-(const double x) const;
 
-		Complex					operator*(const Complex &other);
-		Complex 				operator*(const double x);
+		Complex					operator*(const Complex &other) const;
+		Complex 				operator*(const double x) const;
 
-		Complex					operator/(const Complex &other);
-		Complex 				operator/(const double x);
+		Complex					operator/(const Complex &other) const;
+		Complex 				operator/(const double x) const;
 
 		friend std::ostream&	operator<<(std::ostream& os, const Complex& complex);
 

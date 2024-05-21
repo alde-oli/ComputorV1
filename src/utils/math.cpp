@@ -50,32 +50,39 @@ int	myFactorial(unsigned int x) {
 }
 
 
-double	myCos(double x) {
-	double	cos = 0;
-
-	for (int n = 0; n < TRIGO_RECURSION; n++)
-		cos += myPow(-1, n) * myPow(x, 2 * n) / myFactorial(2 * n);
-	return cos;
+double myCos(double x) {
+    double cos = 0;
+    double term = 1;
+    for (int n = 0; n < TRIGO_RECURSION; n++) {
+        cos += term;
+        term *= -x * x / ((2 * n + 1) * (2 * n + 2));
+    }
+    return cos;
 }
 
 
-double	mySin(double x)  {
-	double	sin = 0;
 
-	for (int n = 0; n < TRIGO_RECURSION; n++)
-		sin += myPow(-1, n) * myPow(x, (2 * n + 1)) / myFactorial(2 * n + 1);
-	return sin;
+double mySin(double x) {
+    double sin = 0;
+    double term = x;
+    for (int n = 0; n < TRIGO_RECURSION; n++) {
+        sin += term;
+        term *= -x * x / ((2 * n + 2) * (2 * n + 3));
+    }
+    return sin;
 }
 
 
 double myArcSin(double x) {
-    double	asin = 0;
-
-    for (int n = 0; n < TRIGO_RECURSION; n++)
-        asin += (myPow(-1, n) * myPow(x, (2 * n + 1))) / ((2 * n + 1) * myFactorial(2 * n));
+    double asin = x;
+    double term = x;
+    for (int n = 1; n < TRIGO_RECURSION; n++) {
+        term *= (x * x * (2 * n - 1) * (2 * n - 1)) / ((2 * n) * (2 * n + 1));
+        asin += term;
+    }
     return asin;
 }
 
 double myArcCos(double x) {
-    return PI / 2 - myArcSin(x);
+	return PI / 2 - myArcSin(x);
 }
