@@ -1,0 +1,24 @@
+"3X^3+3.3* 2^2XX + 2 2*3=2X2^3X^3^2 + 2^2X-+   + -3"
+
+"3X^3+3.3* 2^2Xx + 2 2*3=2X2^3X^3^2 + 2^2X-+   + -3"								CHANGE EVERY x TO X
+
+"3X^3+3.3* 2^2XX + 2 2*3"  |  "2X2^3X^3^2 + 2^2X-+   + -3"							SPLIT EQUALITY SIDES		
+
+"3 X^3 + 3.3 * 2^2 X X + 2 2 * 3"  |  "2 X 2^3 X^3^2 + 2^2 X - + - - 3"				PUT ONE SPACE BETWEEN EACH ELEMENT
+
+"3 X^3 + 3.3 2^2 X X + 2 2 3"  |  "2 X 2^3 X^3^2 + 2^2 X - 3"						REDUCE - AND + OPERATORS
+
+"3 X^3"    "3.3 2^2 X X"    "2 2 3"  |  "2 X 2^3 X^3^2"    "2^2 X"    "-3"			SPLIT TERMS
+
+"3 X^3"    "3.3 4 X X"    "2 2 3"  |  "2 X 8 X^9"    "4 X"    "-3"					COMPUTE POWER GROUPS
+
+"3 X^3"    "13.2 X X"    "12"  |  "16 X X^9"    "4 X"    "-3"						COMBINE COEFFS
+
+"3 X^3"    "13.2 X^2"    "12"  |  "16 X^10"    "4 X"    "-3"						COMBINE Xs
+
+polynomA[3]=3																		PUT COEFF VALUES FOR KEY EXPONENT FOR EACH POLYNOM
+polynomA[2]=13.2
+polynomA[0]=12
+polynomB[10]=16
+polynomB[1]=4
+polynomB[0]=-3

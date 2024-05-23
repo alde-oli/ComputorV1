@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <sstream>
+#include <algorithm>
 #include <iomanip>
 #include <string>
 #include <map>
