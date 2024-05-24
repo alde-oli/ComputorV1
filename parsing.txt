@@ -4,7 +4,7 @@
 
 "3X^3+3.3* 2^2XX + 2 2*3"  |  "2X2^3X^3^2 + 2^2X-+   + -3"							SPLIT EQUALITY SIDES		
 
-"3 X^3 + 3.3 * 2^2 X X + 2 2 * 3"  |  "2 X 2^3 X^3^2 + 2^2 X - + - - 3"				PUT ONE SPACE BETWEEN EACH ELEMENT
+"3 X^3 + 3.3 * 2^2 X X + 2 2 * 3"  |  "2 X 2^3 X^3^2 + 2^2 X -+-- 3"				PUT ONE SPACE BETWEEN EACH ELEMENT
 
 "3 X^3 + 3.3 2^2 X X + 2 2 3"  |  "2 X 2^3 X^3^2 + 2^2 X - 3"						REDUCE - AND + OPERATORS
 
