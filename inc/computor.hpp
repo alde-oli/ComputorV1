@@ -19,17 +19,42 @@
 #define TRIGO_RECURSION 200
 
 
+#define RED "\033[31m";
+#define GREEN "\033[32m";
+#define YELLOW "\033[33m";
+#define BLUE "\033[34m";
+#define MAGENTA "\033[35m";
+#define CYAN "\033[36m";
+#define RESET "\033[0m";
+
+
+// computor
 void	computor(std::string input);
-
-void	parseEquation(std::string &equation, std::map<size_t, double> &left_polynom, std::map<size_t, double> &right_polynom);
-
 void	reduceEquation(std::map<size_t, double> &left_polynom, std::map<size_t, double> &right_polynom);
 
+// parser
+void	parseEquation(std::string &equation, std::map<size_t, double> &left_polynom, std::map<size_t, double> &right_polynom);
+void	checkComposition(const std::string &equation);
+void	normalizeX(std::string &equation);
+void	splitEquation(std::string &equation, std::string &left_polynom, std::string &right_polynom);
+void	checkSyntax(const std::string &equation);
+void	spacePolynom(std::string &equation);
+void	reduceOperators(std::string &equation);
+void	splitPolynom(std::string &str_polynom, std::vector<std::string> &vec_polynom);
+void	resolvePolynom(std::vector<std::string> str_polynom, std::map<size_t, double> &polynom);
+
+double	stringToDouble(const std::string& str);
+int		stringToInt(const std::string& str);
+char	nextNonspaceValue(const std::string &equation, int i);
+int		nextNonspacePos(const std::string &equation, int i);
+
+// solvers
 void	solver0(std::map<size_t, double> &polynom);
 void	solver1(std::map<size_t, double> &polynom);
 void	solver2(std::map<size_t, double> &polynom);
 void	solver3(std::map<size_t, double> &polynom);
 
+// utils
 double	myPow(double x, int exp);
 double	mynRoot(double x, int n);
 int		myFactorial(unsigned int x);
@@ -38,4 +63,5 @@ double	mySin(double x);
 double	myArcCos(double x);
 double	myArcSin(double x);
 
-void	errorExit(std::string msg);
+void	pointError(const std::string &equation, int i, const std::string &error_msg);
+void	errorExit(const std::string msg);
