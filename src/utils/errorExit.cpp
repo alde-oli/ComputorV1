@@ -2,15 +2,16 @@
 
 
 void	pointError(const std::string &equation, int i, const std::string &error_msg) {
-	std::cout << "\terror:" << std::endl;
-	std::cout << equation << std::endl;
+	std::cerr << std::endl << RED << "error:" << RESET << std::endl;
+	std::cerr << equation << YELLOW << std::endl;
 	for (int j = 0; j < i; j++)
-		std::cout << "_";
-	std::cout << "^" << error_msg << std::endl; 
+		std::cerr << "_";
+	std::cerr << "^" << error_msg << RESET << std::endl; 
+	exit(1);
 }
 
 
 void	errorExit(const std::string msg) {
-	std::cerr << msg << std::endl;
+	std::cerr << RED << msg << RESET << std::endl;
 	exit(1);
 }

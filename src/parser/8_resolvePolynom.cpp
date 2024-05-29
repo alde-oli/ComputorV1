@@ -2,5 +2,6 @@
 
 
 void resolvePolynom(std::vector<std::string> str_polynom, std::map<size_t, double> &polynom) {
-
+	(void) str_polynom;
+	(void) polynom;
 }

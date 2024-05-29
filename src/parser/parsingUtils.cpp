@@ -30,6 +30,7 @@ char	nextNonspaceValue(const std::string &equation, int i) {
 	while (++i < len)
 		if ((c = equation[i]) != ' ' && c != '\t')
 			return c;
+	return 0;
 }
 
 
@@ -40,4 +41,5 @@ int	nextNonspacePos(const std::string &equation, int i) {
 	while (++i < len)
 		if ((c = equation[i]) != ' ' && c != '\t')
 			return i;
+	return len;
 }

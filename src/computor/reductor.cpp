@@ -14,7 +14,7 @@ void	reduceEquation(std::map<size_t, double> &left_polynom, std::map<size_t, dou
 	if (right_polynom.find(0) != right_polynom.end())
 			left_polynom[0] -= right_polynom[0];
 	
-	std::cout << "Reduced equation:" << std::endl;
+	std::cout << MAGENTA << "Reduced equation:" << CYAN << std::endl;
 
 	bool			first = true;
 	unsigned int	deg = left_polynom.rbegin()->first;
@@ -25,5 +25,5 @@ void	reduceEquation(std::map<size_t, double> &left_polynom, std::map<size_t, dou
 		if (first)
 			first = false;
 	}
-	std::cout << "= 0" << std::endl;
+	std::cout << "= 0" << RESET << std::endl;
 }
