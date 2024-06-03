@@ -1,6 +1,7 @@
 #include "computor.hpp"
 
 
+
 void	splitEquation(std::string &equation, std::string &left_polynom, std::string &right_polynom) {
 	size_t	equalSignCount = std::count(equation.begin(), equation.end(), '=');
 

@@ -1,6 +1,7 @@
 #include "computor.hpp"
 
 
+
 void	parseEquation(std::string &equation, std::map<size_t, double> &left_polynom, std::map<size_t, double> &right_polynom) {
 	checkComposition(equation);
 	normalizeX(equation);

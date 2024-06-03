@@ -1,8 +1,6 @@
 #include "computor.hpp"
 #include <cmath>
 
-// aX^3 + bX^2 + cX + d = 0
-//[3]    [2]    [1]  [0]
 
 
 void solver3(std::map<size_t, double> &polynom) {
@@ -39,13 +37,13 @@ void solver3(std::map<size_t, double> &polynom) {
         double r = mynRoot(-p / 3, 2);
         double theta = myArcCos((3 * q) / (2 * p) * mynRoot(-3 / p, 2));
         T1 = 2 * r * myCos(theta / 3);
-        T2 = 2 * r * myCos((theta + 2 * M_PI) / 3);
-        T3 = 2 * r * myCos((theta + 4 * M_PI) / 3);
+        T2 = 2 * r * myCos((theta + 2 * PI) / 3);
+        T3 = 2 * r * myCos((theta + 4 * PI) / 3);
     }
 
     T1 -= b / (3 * a);
     T2 = T2 - Complex(b / (3 * a), 0);
     T3 = T3 - Complex(b / (3 * a), 0);
 
-    std::cout << "result:\n\tX1 = " << T1 << "\n\tX2 = " << T2 << "\n\tX3 = " << T3 << std::endl;
+    std::cout << PINK << "result:" << GOLD << "\n\tX1 = " << T1 << "\n\tX2 = " << T2 << "\n\tX3 = " << T3 << std::endl;
 }

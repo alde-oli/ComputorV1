@@ -1,6 +1,7 @@
 #include "computor.hpp"
 
 
+
 void reduceOperators(std::string &equation) {
 	std::string reducedEquation;
 	char lastOperator = '\0';
@@ -12,9 +13,7 @@ void reduceOperators(std::string &equation) {
 			if (lastOperator == '\0')
 				lastOperator = c;
 			else {
-				if (lastOperator == '+' && c == '+')
-					lastOperator = '+';
-				else if (lastOperator == '-' && c == '-')
+				if ((lastOperator == '+' && c == '+') || (lastOperator == '-' && c == '-'))
 					lastOperator = '+';
 				else if ((lastOperator == '+' && c == '-') || (lastOperator == '-' && c == '+'))
 					lastOperator = '-';

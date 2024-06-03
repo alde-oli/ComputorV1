@@ -1,15 +1,19 @@
 #include "computor.hpp"
 
 
+
 void	splitPolynom(std::string &str_polynom, std::vector<std::string> &vec_polynom) {
 	std::string currentMonome;
 	bool isNegative = false;
-
 	for (size_t i = 0; i < str_polynom.size(); ++i) {
 		char c = str_polynom[i];
 
 		if (c == '+' || c == '-') {
 			if (!currentMonome.empty()) {
+				if (currentMonome.front() == ' ')
+					currentMonome.erase(currentMonome.begin());
+				if (currentMonome.back() == ' ')
+					currentMonome.pop_back();
 				if (isNegative)
 					vec_polynom.push_back("-" + currentMonome);
 				else
@@ -21,6 +25,10 @@ void	splitPolynom(std::string &str_polynom, std::vector<std::string> &vec_polyno
 			currentMonome += c;
 	}
 	if (!currentMonome.empty()) {
+		if (currentMonome.front() == ' ')
+			currentMonome.erase(currentMonome.begin());
+		if (currentMonome.back() == ' ')
+			currentMonome.pop_back();
 		if (isNegative)
 			vec_polynom.push_back("-" + currentMonome);
 		else

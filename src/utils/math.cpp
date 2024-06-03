@@ -1,6 +1,7 @@
 #include "computor.hpp"
 
 
+
 double	myPow(double x, int exp) {
 	double	result = 1.0;
 	bool	is_negative = exp < 0;

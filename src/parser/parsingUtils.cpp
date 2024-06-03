@@ -1,7 +1,8 @@
 #include "computor.hpp"
 
 
-double	stringToDouble(const std::string& str) {
+
+double	strToDouble(const std::string& str) {
 	std::istringstream	iss(str);
 	double				result;
 
@@ -12,14 +13,28 @@ double	stringToDouble(const std::string& str) {
 }
 
 
-int	stringToInt(const std::string& str) {
+size_t	strToSizeT(const std::string& str) {
 	std::istringstream	iss(str);
-	int					result;
+	size_t				result;
 
 	iss >> result;
 	if (iss.fail() || !iss.eof())
-		errorExit("Conversion to int failed for: " + str);
+		errorExit("Conversion to size_t failed for: " + str);
 	return result;
+}
+
+
+std::string	doubleToStr(double n) {
+	std::ostringstream	oss;
+	oss << n;
+	return oss.str();
+}
+
+
+std::string	sizeTToStr(size_t n) {
+	std::ostringstream	oss;
+	oss << n;
+	return oss.str();
 }
 
 

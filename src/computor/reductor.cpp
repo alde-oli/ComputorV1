@@ -1,6 +1,7 @@
 #include "computor.hpp"
 
 
+
 void	reduceEquation(std::map<size_t, double> &left_polynom, std::map<size_t, double> &right_polynom) {
 	size_t			equation_degree;
 
@@ -14,14 +15,15 @@ void	reduceEquation(std::map<size_t, double> &left_polynom, std::map<size_t, dou
 	if (right_polynom.find(0) != right_polynom.end())
 			left_polynom[0] -= right_polynom[0];
 	
-	std::cout << MAGENTA << "Reduced equation:" << CYAN << std::endl;
+	std::cout << VIOLET << "Reduced equation:\n\t" << CYAN;
 
 	bool			first = true;
 	unsigned int	deg = left_polynom.rbegin()->first;
 		while(deg && !left_polynom[deg])
 			deg--;
 	for (size_t i = 0; i <= deg; i++) {
-		std::cout << (left_polynom[i] >= 0 ? (first ? "" : "+ ") : (first ? "-" : "- ")) << (left_polynom[i] < 0 ? - left_polynom[i] : left_polynom[i]) << " * X^" << i << " ";
+		if (left_polynom[i])
+			std::cout << (left_polynom[i] >= 0 ? (first ? "" : "+ ") : (first ? "-" : "- ")) << (left_polynom[i] < 0 ? - left_polynom[i] : left_polynom[i]) << " * X^" << i << " ";
 		if (first)
 			first = false;
 	}
