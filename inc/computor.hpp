@@ -13,6 +13,7 @@
 #include <vector>
 #include <limits>
 #include "Complex.hpp"
+#include "verbose.hpp"
 
 
 #define PI 3.14159265358979323846
