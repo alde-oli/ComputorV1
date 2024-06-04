@@ -14,7 +14,7 @@ void solver3(std::map<size_t, double> &polynom) {
 
     double delta = myPow(q / 2, 2) + myPow(p / 3, 3);
 
-    std::cout << "delta: " << delta << std::endl;
+    std::cout << "\tdelta: " << delta << std::endl;
 
     double T1 = 0;
     Complex T2, T3;
@@ -45,5 +45,5 @@ void solver3(std::map<size_t, double> &polynom) {
     T2 = T2 - Complex(b / (3 * a), 0);
     T3 = T3 - Complex(b / (3 * a), 0);
 
-    std::cout << PINK << "result:" << GOLD << "\n\tX1 = " << T1 << "\n\tX2 = " << T2 << "\n\tX3 = " << T3 << std::endl;
+    std::cout << PINK << "\tresult:" << GOLD << "\n\t\tX1 = " << T1 << "\n\t\tX2 = " << T2 << "\n\t\tX3 = " << T3 << std::endl;
 }

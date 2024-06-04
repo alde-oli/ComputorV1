@@ -42,9 +42,10 @@ void	computor(std::string input) {
 			deg--;
 		std::cout << VIOLET << "polynomial degree: \n\t" << CYAN << deg << RESET << std::endl;
 
-		if (deg <= 3)
+		if (deg <= 3) {
+			std::cout << std::endl << VIOLET << "Solving equation:" << RESET << std::endl;
 			solvers[deg](left_polynom);
-		else
+		} else
 			std::cout << YELLOW << "cannot resolve equations over 3rd degree" << RESET << std::endl;
 }
 

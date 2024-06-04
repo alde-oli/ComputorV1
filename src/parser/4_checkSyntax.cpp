@@ -41,7 +41,9 @@ void	checkSyntax(const std::string &equation) {
 					pointError(equation, i, "float used as exponant");
 
 		} else if (equation[i] == '*')
-			if (nextNonspaceValue(equation, i) == '*' && nextNonspaceValue(equation, nextNonspacePos(equation, i)) == '*')
+			if (nextNonspaceValue(equation, i) == '*' && (nextNonspaceValue(equation, nextNonspacePos(equation, i)) == '*' || nextNonspaceValue(equation, nextNonspacePos(equation, i)) == 'X'))
 				pointError(equation, i, "too many consecutives \'*\'");
 	}
+	if (verbose)
+		std::cout << GREEN << "Syntax OK" << RESET << std::endl << std::endl;
 }

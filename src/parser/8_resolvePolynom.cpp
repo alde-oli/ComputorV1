@@ -26,7 +26,10 @@ static void	resolveTerm(std::string &term, std::map<size_t, double> &polynom) {
 		return ;
 
 	for (std::vector<std::string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
-		if ((*it)[0] == 'X') {
+		if ((*it)[0] == '-') {
+			coeff *= -1;
+			*it = (*it).substr(1);
+		} if ((*it)[0] == 'X') {
 			if ((*it).length() == 1)
 				exp += 1;
 			else
@@ -71,9 +74,8 @@ static void resolvePowGroup(std::string &group) {
 		for (int i = tokens.size() - 2; i >= 0; --i) {
 			double base = strToDouble(tokens[i]);
 			result = myPow(base, result);
-			if (result == std::numeric_limits<double>::infinity() || result == -std::numeric_limits<double>::infinity()) {
+			if (result == std::numeric_limits<double>::infinity() || result == -std::numeric_limits<double>::infinity())
 				break;
-			}
 		}
 		group = doubleToStr(result);
 	}

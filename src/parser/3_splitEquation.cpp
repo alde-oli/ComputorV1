@@ -12,4 +12,7 @@ void	splitEquation(std::string &equation, std::string &left_polynom, std::string
 
 	left_polynom = equation.substr(0, equalPos);
 	right_polynom = equation.substr(equalPos + 1);
+
+	if (verbose)
+		std::cout << GREEN << "Equation split:\n\tleft  = "<< left_polynom << std::endl << "\tright = " << right_polynom << RESET << std::endl << std::endl;
 }

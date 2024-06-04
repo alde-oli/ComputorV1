@@ -18,6 +18,9 @@ void	parseEquation(std::string &equation, std::map<size_t, double> &left_polynom
 	reduceOperators(s_left_polynom);
 	reduceOperators(s_right_polynom);
 
+	if (verbose)
+		std::cout << GREEN << "Spaced equation:\n\tleft  = " << s_left_polynom << std::endl << "\tright = " << s_right_polynom << RESET << std::endl << std::endl;
+
 	std::vector<std::string> v_left_polynom, v_right_polynom;
 	splitPolynom(s_left_polynom, v_left_polynom);
 	splitPolynom(s_right_polynom, v_right_polynom);

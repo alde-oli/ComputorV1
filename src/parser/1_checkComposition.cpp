@@ -7,4 +7,6 @@ void checkComposition(const std::string &equation) {
 
 	if (pos != std::string::npos)
 		pointError(equation, pos, "invalid character");
+	if (verbose)
+		std::cout << GREEN << "Composition OK" << RESET << std::endl << std::endl;
 }
