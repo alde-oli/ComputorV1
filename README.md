@@ -21,7 +21,6 @@ make
 ./computor -v "X^3 - 6X^2 + 11X = 6"
 ./computor HELP
 ```
-On a case-sensitive filesystem (Linux), `make` fails: the sources include `Complex.hpp` but the file is `inc/complex.hpp`. Renaming or copying the header to `inc/Complex.hpp` fixes the build.
 
 ---
 <sub>▸ Archived by UNIT ALDE-OLI · [profile](https://github.com/alde-oli)</sub>
